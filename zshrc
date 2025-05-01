@@ -6,6 +6,7 @@ SAVEHIST=1000
 
 # vi like mode
 bindkey -v
+# more vim like backspace
 bindkey -M viins '^?' backward-delete-char
 
 #Auto-Completion 
