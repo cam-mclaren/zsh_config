@@ -26,6 +26,22 @@ alias ll='ls -altr --color=auto'
 export GO111MODULE=on
 
 # Go path
-export PATH=$PATH:/usr/local/go/bin:/home/cam/go/bin
+PATH=$PATH:/usr/local/go/bin:/home/cam/.local/go/bin
+
+#local python modules path 
+PATH=$PATH:~/.local/bin
+
+export PATH=$PATH
 
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+vi-search-fix() {
+zle vi-cmd-mode
+zle .vi-history-search-backward
+}
+
+# GNUPG not signing commits properly. Try this
+export GPG_TTY=$(tty)
