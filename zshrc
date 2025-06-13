@@ -1,17 +1,25 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 # End of lines configured by zsh-newuser-install
+
+# Shared session history
+setopt INC_APPEND_HISTORY
 
 # vi like mode
 bindkey -v
+
+export KEYTIMEOUT=1
+
 # more vim like backspace
 bindkey -M viins '^?' backward-delete-char
 
 #Auto-Completion 
 autoload -Uz compinit
 compinit
+
+unsetopt AUTO_LIST             # Don’t list options unless requested
 
 #Define Zsh theme
 ZSH_THEME=my-theme
@@ -34,15 +42,9 @@ PATH=$PATH:~/.local/bin
 
 export PATH=$PATH
 
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-vi-search-fix() {
-zle vi-cmd-mode
-zle .vi-history-search-backward
-}
 
 # GNUPG not signing commits properly. Try this
 export GPG_TTY=$(tty)
