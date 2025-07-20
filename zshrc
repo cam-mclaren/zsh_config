@@ -49,3 +49,9 @@ export NVM_DIR="$HOME/.nvm"
 
 # GNUPG not signing commits properly. Try this
 export GPG_TTY=$(tty)
+
+# Use vim
+export EDITOR=vim
+
+# Use less
+export PAGER='less -S'
