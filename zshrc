@@ -5,11 +5,12 @@ SAVEHIST=10000
 # End of lines configured by zsh-newuser-install
 
 # Shared session history
-setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
 
 # vi like mode
 bindkey -v
 
+# Stop zsh vi mode catching the escape as an alt key (I tend to quickly hit ESC then / for a backward search. These need to be seen as ESC then / not ALT + /) 
 export KEYTIMEOUT=1
 
 # more vim like backspace
@@ -27,15 +28,15 @@ source ~/.config/zsh/zsh-theme
 
 ## Colourise ls output ##
 alias ls='ls --color=auto'
-
 ## Use a long listing format with ls ##
 alias ll='ls -altr --color=auto'
 
-# Configure Go to install stuff of Github idk
-export GO111MODULE=on
-
-# Go path
-PATH=$PATH:/usr/local/go/bin:/home/cam/.local/go/bin
+if [[ -e /usr/local/go/bin/go ]]; 
+then 
+  PATH=$PATH:/usr/local/go/bin:/home/cam/.local/go/bin
+  go env -w GO111MODULE=on
+  go env -w GOBIN=/home/cam/.local/go/bin
+fi
 
 #local python modules path 
 PATH=$PATH:~/.local/bin
