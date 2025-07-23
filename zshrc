@@ -55,3 +55,8 @@ export EDITOR=vim
 
 # Use less
 export PAGER='less -S'
+
+# Put anything machine specific in this file
+if [ -f ~/.local_zshrc ]; then
+  source ~/.local_zshrc
+fi

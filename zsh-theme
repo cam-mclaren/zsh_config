@@ -32,8 +32,11 @@ component2 () {
 	echo "%{$bg[$bCOL2]%}%{$fg[$fCOL2]%}$(cur_dir)%{$reset_color%}%{$reset_color%}""%{$fg[$bCOL2]%}$(right_triangle)%{$reset_color%}"
 }
 
+export title () {
+  echo  "\033]2;$USER@$HOST:$PWD\007"
+}
 
-PROMPT="$(component1)$(component2) "
+PROMPT='$(title)'"$(component1)$(component2) "
 RPROMPT=""
 
 
