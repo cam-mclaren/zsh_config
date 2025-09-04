@@ -33,7 +33,7 @@ component2 () {
 }
 
 export title () {
-  echo  "\033]2;$USER@$HOST:$PWD\007"
+  echo  "%{\033]2;$USER@$HOST:$PWD\007%}"
 }
 
 PROMPT='$(title)'"$(component1)$(component2) "
