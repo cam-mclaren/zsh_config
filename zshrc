@@ -33,9 +33,9 @@ alias ll='ls -altr --color=auto'
 
 if [[ -e /usr/local/go/bin/go ]]; 
 then 
-  PATH=$PATH:/usr/local/go/bin:/home/$HOME/go/bin
+  PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
   go env -w GO111MODULE=on
-  go env -w GOBIN=/home/$HOME/go/bin
+  go env -w GOBIN=$HOME/go/bin
 fi
 
 #local python modules path 
