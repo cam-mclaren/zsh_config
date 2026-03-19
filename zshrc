@@ -20,6 +20,11 @@ bindkey -M viins '^?' backward-delete-char
 autoload -Uz compinit
 compinit
 
+#Use v to edit current line in editor
+autoload edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 unsetopt AUTO_LIST             # Don’t list options unless requested
 
 #Define Zsh theme
